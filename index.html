@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<style>
+			body {
+				background-color: #000000;
+				color: #ffffff;
+			}
+			.grid {
+				display: grid;
+				place-items: center;
+				height: 100%;
+				width: 100%;
+			}
+			#btnArea {
+				text-align: center;
+			}
+			#newcolor {
+				width: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="grid">
+			<div>
+				<p style="opacity: 40%;">Press 'F11' to go full screen.</p>
+				<div id="btnArea">
+					<span>
+						<button id="wbBtn" onclick="bChange()">White</button> or 
+						<input type="color" id="newcolor" name="newcolor" value="black" onchange="nChange()">
+				<div>
+			</div>
+		</div>
+		<!-- js code here -->
+		<script>
+			var col = 0
+			function bChange(){
+				if(col == 0){
+					document.body.style.backgroundColor = "#ffffff";
+					document.getElementById("newcolor").value = "#ffffff";
+					document.body.style.color = "#000000";
+					document.getElementById("wbBtn").innerHTML = "Black";
+					col = 1;
+				}
+				else {
+					document.body.style.backgroundColor = "#000000";
+					document.getElementById("newcolor").value = "#000000";
+					document.body.style.color = "#ffffff";
+					document.getElementById("wbBtn").innerHTML = "White";
+					col = 0;
+				}
+			}
+			function nChange(){
+				var n = document.getElementById("newcolor").value;
+				document.body.style.backgroundColor = n;
+			}
+		</script>
+	</body>
+</html>
